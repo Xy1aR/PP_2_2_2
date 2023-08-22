@@ -25,14 +25,7 @@ public class CarController {
     public String getCars(@RequestParam(value = "count", required = false) Integer counter,
                            ModelMap model) {
 
-        List<Car> carsList = new ArrayList<>();
-        carsList.add(new Car("VW", "Polo", 2023));
-        carsList.add(new Car("VAZ", "2101", 1979));
-        carsList.add(new Car("BMW", "M3", 2022));
-        carsList.add(new Car("M-B", "X-Class", 2018));
-        carsList.add(new Car("AUDI", "TT", 2018));
-
-        model.addAttribute("carsList", carService.listCars(carsList, counter));
+        model.addAttribute("carsList", carService.listCars(counter));
 
         return "cars";
     }
